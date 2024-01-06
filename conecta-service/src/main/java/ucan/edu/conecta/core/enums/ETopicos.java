@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Enum.java to edit this template
  */
-package ucan.edu.conecta.enums;
+package ucan.edu.conecta.core.enums;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

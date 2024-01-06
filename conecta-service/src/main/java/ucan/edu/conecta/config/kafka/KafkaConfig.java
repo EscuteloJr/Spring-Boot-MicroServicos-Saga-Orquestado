@@ -21,14 +21,14 @@ import org.springframework.kafka.core.DefaultKafkaConsumerFactory;
 import org.springframework.kafka.core.DefaultKafkaProducerFactory;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.kafka.core.ProducerFactory;
-import static ucan.edu.conecta.enums.ETopicos.BASE_ORQUESTRADOR;
-import static ucan.edu.conecta.enums.ETopicos.FINISH_FAIL;
-import static ucan.edu.conecta.enums.ETopicos.FINISH_SUCCESS;
-import static ucan.edu.conecta.enums.ETopicos.MOVIMENTOS_FAIL;
-import static ucan.edu.conecta.enums.ETopicos.MOVIMENTOS_SUCCESS;
-import static ucan.edu.conecta.enums.ETopicos.PAGAMENTO_FAIL;
-import static ucan.edu.conecta.enums.ETopicos.PAGAMENTO_SUCCESS;
-import static ucan.edu.conecta.enums.ETopicos.START_SAGA;
+import static ucan.edu.conecta.core.enums.ETopicos.BASE_ORQUESTRADOR;
+import static ucan.edu.conecta.core.enums.ETopicos.FINISH_FAIL;
+import static ucan.edu.conecta.core.enums.ETopicos.FINISH_SUCCESS;
+import static ucan.edu.conecta.core.enums.ETopicos.MOVIMENTOS_FAIL;
+import static ucan.edu.conecta.core.enums.ETopicos.MOVIMENTOS_SUCCESS;
+import static ucan.edu.conecta.core.enums.ETopicos.PAGAMENTO_FAIL;
+import static ucan.edu.conecta.core.enums.ETopicos.PAGAMENTO_SUCCESS;
+import static ucan.edu.conecta.core.enums.ETopicos.START_SAGA;
 
 /**
  *
