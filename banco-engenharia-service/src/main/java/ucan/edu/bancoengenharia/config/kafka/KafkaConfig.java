@@ -21,10 +21,10 @@ import org.springframework.kafka.core.DefaultKafkaConsumerFactory;
 import org.springframework.kafka.core.DefaultKafkaProducerFactory;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.kafka.core.ProducerFactory;
-import static ucan.edu.bancoengenharia.enums.ETopicos.MOVIMENTOS_FAIL;
-import static ucan.edu.bancoengenharia.enums.ETopicos.MOVIMENTOS_SUCCESS;
-import static ucan.edu.bancoengenharia.enums.ETopicos.PAGAMENTO_FAIL;
-import static ucan.edu.bancoengenharia.enums.ETopicos.PAGAMENTO_SUCCESS;
+import static ucan.edu.bancoengenharia.core.enums.ETopicos.MOVIMENTOS_FAIL;
+import static ucan.edu.bancoengenharia.core.enums.ETopicos.MOVIMENTOS_SUCCESS;
+import static ucan.edu.bancoengenharia.core.enums.ETopicos.PAGAMENTO_FAIL;
+import static ucan.edu.bancoengenharia.core.enums.ETopicos.PAGAMENTO_SUCCESS;
 
 /**
  *
