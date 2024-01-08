@@ -24,3 +24,20 @@
 * Conecta (Orquestrador-Service):
    microsserviço responsável por orquestrar todo o fluxo de execução da Saga, ele que saberá qual microsserviço foi executado e em qual estado, e para qual será o próximo microsserviço a ser enviado, este microsserviço também irá salvar o processo dos eventos. Este serviço não possui banco de dados.
   
+## Execução do projeto
+### Execução da main
+
+<code> git clone https://github.com/EscuteloJr/Spring-Boot-MicroServicos-Saga-Orquestado.git  
+</code>
+<br>
+<code>docker compose up</code>
+
+### Execução da Estrutura Revisada
+
+<code> git clone https://github.com/EscuteloJr/Spring-Boot-MicroServicos-Saga-Orquestado.git  
+</code>
+<br>
+<code> git checkout EstruturaRevisada</code>
+<br>
+<code>docker compose up</code>
+

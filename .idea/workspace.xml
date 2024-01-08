@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="12dd89e0-3ebb-4b1f-b274-29bea2cbfa4f" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/BancoEngenharia/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/banco_engenharia/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BancoEngenharia/Dockerfile.txt" beforeDir="false" afterPath="$PROJECT_DIR$/banco_engenharia/Dockerfile.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BancoEngenharia/nb-configuration.xml" beforeDir="false" afterPath="$PROJECT_DIR$/banco_engenharia/nb-configuration.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BancoEngenharia/nbactions.xml" beforeDir="false" afterPath="$PROJECT_DIR$/banco_engenharia/nbactions.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BancoEngenharia/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/banco_engenharia/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BancoEngenharia/src/main/java/ucan/edu/bancoEngenharia/BancoEngenhariaApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/banco_engenharia/src/main/java/ucan/edu/bancoEngenharia/BancoEngenhariaApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BancoEngenharia/src/main/java/ucan/edu/bancoEngenharia/config/kafka/KafkaConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/banco_engenharia/src/main/java/ucan/edu/bancoEngenharia/config/kafka/KafkaConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BancoEngenharia/src/main/java/ucan/edu/bancoEngenharia/enums/ETopicos.java" beforeDir="false" afterPath="$PROJECT_DIR$/banco_engenharia/src/main/java/ucan/edu/bancoEngenharia/enums/ETopicos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BancoEngenharia/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/banco_engenharia/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BancoEngenharia/src/test/java/ucan/edu/bancoEngenharia/BancoEngenhariaApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/banco_engenharia/src/test/java/ucan/edu/bancoEngenharia/BancoEngenhariaApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Conecta/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/conecta/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Conecta/Dockerfile.txt" beforeDir="false" afterPath="$PROJECT_DIR$/conecta/Dockerfile.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Conecta/nb-configuration.xml" beforeDir="false" afterPath="$PROJECT_DIR$/conecta/nb-configuration.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Conecta/nbactions.xml" beforeDir="false" afterPath="$PROJECT_DIR$/conecta/nbactions.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Conecta/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/conecta/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Conecta/src/main/java/ucan/edu/conecta/ConectaApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/conecta/src/main/java/ucan/edu/conecta/ConectaApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Conecta/src/main/java/ucan/edu/conecta/config/kafka/KafkaConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/conecta/src/main/java/ucan/edu/conecta/config/kafka/KafkaConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Conecta/src/main/java/ucan/edu/conecta/enums/ETopicos.java" beforeDir="false" afterPath="$PROJECT_DIR$/conecta/src/main/java/ucan/edu/conecta/enums/ETopicos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Conecta/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/conecta/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Conecta/src/test/java/ucan/edu/conecta/ConectaApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/conecta/src/test/java/ucan/edu/conecta/ConectaApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
+  <component name="ProjectId" id="2aX2czLQ1ikpUkLwp7Hh5EoSYUr" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/ismaeldev/projects/ucan/github/sdp2/grupo4/mateus/Conecta&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-17.0.9-corretto-17.0.9-3183f394aec4-86fc8109" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="12dd89e0-3ebb-4b1f-b274-29bea2cbfa4f" name="Changes" comment="" />
+      <created>1704450686763</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1704450686763</updated>
+      <workItem from="1704450688913" duration="6033000" />
+      <workItem from="1704460779716" duration="5000" />
+      <workItem from="1704460794085" duration="5000" />
+      <workItem from="1704491621022" duration="17000" />
+      <workItem from="1704735417845" duration="12000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
