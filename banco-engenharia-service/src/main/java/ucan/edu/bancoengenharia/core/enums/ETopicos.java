@@ -15,8 +15,11 @@ import lombok.Getter;
 @AllArgsConstructor
 public enum ETopicos {
 
-    MOVIMENTOS_SUCCESS("movimentos-success"),
-    MOVIMENTOS_FAIL("movimentos-fail"),
+    CONECTA("conecta"),
+    TRANSFERENCIA_SUCESS("transferencia-success"),
+    TRANSFERENCIA_FAIL("transferencia-fail"),
+    MOVIMENTOS_CONTA_SUCCESS("movimentos-success"),
+    MOVIMENTOS_CONTA_FAIL("movimentos-fail"),
     PAGAMENTO_SUCCESS("pagamento-success"),
     PAGAMENTO_FAIL("pagamento-fail");
 

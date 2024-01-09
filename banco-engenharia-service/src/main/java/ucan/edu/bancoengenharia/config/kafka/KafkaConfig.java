@@ -21,8 +21,7 @@ import org.springframework.kafka.core.DefaultKafkaConsumerFactory;
 import org.springframework.kafka.core.DefaultKafkaProducerFactory;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.kafka.core.ProducerFactory;
-import static ucan.edu.bancoengenharia.core.enums.ETopicos.MOVIMENTOS_FAIL;
-import static ucan.edu.bancoengenharia.core.enums.ETopicos.MOVIMENTOS_SUCCESS;
+import ucan.edu.bancoengenharia.core.enums.ETopicos;
 import static ucan.edu.bancoengenharia.core.enums.ETopicos.PAGAMENTO_FAIL;
 import static ucan.edu.bancoengenharia.core.enums.ETopicos.PAGAMENTO_SUCCESS;
 
@@ -89,8 +88,6 @@ public class KafkaConfig {
                 .build();
     }
 
-
-
     @Bean
     public NewTopic PagamentoSucess() {
         return buildTopic(PAGAMENTO_SUCCESS.getTopico());
@@ -103,12 +100,12 @@ public class KafkaConfig {
 
     @Bean
     public NewTopic MovimentoSucess() {
-        return buildTopic(MOVIMENTOS_SUCCESS.getTopico());
+        return buildTopic(ETopicos.MOVIMENTOS_CONTA_SUCCESS.getTopico());
     }
 
     @Bean
     public NewTopic MovimentoFail() {
-        return buildTopic(MOVIMENTOS_FAIL.getTopico());
+        return buildTopic(ETopicos.MOVIMENTOS_CONTA_FAIL.getTopico());
     }
 
 }
