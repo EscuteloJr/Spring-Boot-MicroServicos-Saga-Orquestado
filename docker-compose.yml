@@ -1,6 +1,6 @@
----
 version: "3"
 services:
+  # Serviço do banco de dados
   banco_engenharia_db:
     container_name: banco_engenharia_db
     image: postgres:latest
@@ -24,7 +24,7 @@ services:
     networks:
       - orquestrador
     ports:
-      - 5434:5432a
+      - 5434:5432
   banco_direito_db:
     container_name: banco_direito_db
     image: postgres:latest
@@ -58,6 +58,8 @@ services:
       ZOOKEEPER_AUTOPURGE_PURGE_INTERVAL: "0"
     volumes:
       - ./data/kafka/data:/var/lib/kafka/data
+
+  # Serviço Redpanda Console
   redpanda-console:
     container_name: redpanda
     image: docker.redpanda.com/vectorized/console:latest
@@ -75,8 +77,12 @@ services:
           brokers: ["kafka:29092"]
     depends_on:
       - kafka
+
+  # Serviço Conecta
   conecta:
-    build: ./conecta-service
+    build: 
+      context: ./conecta-service
+      dockerfile: Dockerfile
     container_name: conecta
     depends_on:
       - kafka
@@ -86,8 +92,12 @@ services:
       - KAFKA_BROKER=kafka:29092
     ports:
       - 8080:8080
+
+  # Serviço Banco-Engenharia
   banco-engenharia:
-    build: ./banco-engenharia-service
+    build: 
+      context: ./banco-engenharia-service
+      dockerfile: Dockerfile
     container_name: banco-engenharia
     depends_on:
       - banco_engenharia_db
