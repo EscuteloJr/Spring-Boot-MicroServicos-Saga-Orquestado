@@ -24,7 +24,7 @@ services:
     networks:
       - orquestrador
     ports:
-      - 5434:5432
+      - 5434:5432a
   banco_direito_db:
     container_name: banco_direito_db
     image: postgres:latest
