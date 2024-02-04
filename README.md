@@ -41,3 +41,9 @@
 <br>
 <code>docker compose up</code>
 
+
+
+#### Execução do serviço Orquestrador
+<code> git checkout EstruturaRevisada</code>
+<br>
+<code>docker compose up</code>

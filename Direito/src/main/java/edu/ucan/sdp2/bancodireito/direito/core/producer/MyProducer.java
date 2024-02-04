@@ -4,12 +4,15 @@
  */
 package edu.ucan.sdp2.bancodireito.direito.core.producer;
 
+import edu.ucan.sdp2.bancodireito.direito.core.models.DataTeste;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.kafka.core.KafkaTemplate;
+import org.springframework.kafka.requestreply.ReplyingKafkaTemplate;
 import org.springframework.stereotype.Component;
 
 import static edu.ucan.sdp2.bancodireito.direito.core.enums.ETopicos.CONECTA;
+import static edu.ucan.sdp2.bancodireito.direito.core.enums.ETopicos.TRANSFERENCIA_SUCESS;
 
 
 /**
@@ -19,13 +22,14 @@ import static edu.ucan.sdp2.bancodireito.direito.core.enums.ETopicos.CONECTA;
 @Slf4j
 @Component
 @RequiredArgsConstructor
-public class KafkaProducer {
+public class MyProducer {
 
-    private final KafkaTemplate<String, String> kafkaTemplate;
+    private final ;
 
-    public void enviarEvento(String transacao) {
+    public void enviarEvento(DataTeste transacao) {
         try {
-            log.info("Enviando dados ao topico {} com dados {}", CONECTA.getTopico(), transacao);
+            KafkaTemplate<String, DataTeste> kafkaTemplate = new ReplyingKafkaTemplate<>();
+            log.info("Enviando dados ao topico {} com dados {}", TRANSFERENCIA_SUCESS.getTopico(), transacao);
             kafkaTemplate.send(CONECTA.getTopico(), transacao);
         } catch (Exception e) {
             log.error("Erro ao enviar dados ao topico {} com dados {}", CONECTA.getTopico(), transacao, e);

@@ -114,3 +114,6 @@ services:
     ports:
       - 8092:809
 
+networks:
+  orquestrador:
+    driver: bridge
