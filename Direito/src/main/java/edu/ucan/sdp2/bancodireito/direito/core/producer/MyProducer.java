@@ -24,9 +24,9 @@ import static edu.ucan.sdp2.bancodireito.direito.core.enums.ETopicos.TRANSFERENC
 @RequiredArgsConstructor
 public class MyProducer {
 
-    private final ;
+  //  private final ;
 
-    public void enviarEvento(DataTeste transacao) {
+  /*  public void enviarEvento(DataTeste transacao) {
         try {
             KafkaTemplate<String, DataTeste> kafkaTemplate = new ReplyingKafkaTemplate<>();
             log.info("Enviando dados ao topico {} com dados {}", TRANSFERENCIA_SUCESS.getTopico(), transacao);
@@ -34,5 +34,5 @@ public class MyProducer {
         } catch (Exception e) {
             log.error("Erro ao enviar dados ao topico {} com dados {}", CONECTA.getTopico(), transacao, e);
         }
-    }
+    }*/
 }

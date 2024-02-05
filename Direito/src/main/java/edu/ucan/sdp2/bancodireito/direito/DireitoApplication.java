@@ -33,19 +33,19 @@ class Init{
 
 //    @Value("${bank.topics}")
 //    private String topic;
-    @PostConstruct
-    public void initTeste(){
-        producer.enviarEvento(DataTeste.builder()
-                        .id("64429e9a7a8b646915b37360")
-                        .transactionID("1682087576536_99d2ca6c-f074-41a6-92e0-21700148b519")
-                        .detalhes(Detalhes.builder()
-                                .descricaTransacao("Tranferencia")
-                                .montante(4.09)
-                                .moedaTipo("AO")
-                                .dataTransacao(LocalDateTime.now().atOffset(ZoneOffset.UTC))
-                                .localDaTransacao("BANCO-DIR")
-                                .build())
-                .build());
-    }
+//    @PostConstruct
+//    public void initTeste(){
+//        producer.enviarEvento(DataTeste.builder()
+//                        .id("64429e9a7a8b646915b37360")
+//                        .transactionID("1682087576536_99d2ca6c-f074-41a6-92e0-21700148b519")
+//                        .detalhes(Detalhes.builder()
+//                                .descricaTransacao("Tranferencia")
+//                                .montante(4.09)
+//                                .moedaTipo("AO")
+//                                .dataTransacao(LocalDateTime.now().atOffset(ZoneOffset.UTC))
+//                                .localDaTransacao("BANCO-DIR")
+//                                .build())
+//                .build());
+//    }
 
 }
