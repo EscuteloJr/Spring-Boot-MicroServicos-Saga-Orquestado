@@ -10,7 +10,5 @@ package ucan.edu.bancoengenharia.core.enums;
  */
 public enum ETransacaoTipo {
     TRANSFERENCIA,
-    DEPOSITO,
-    LEVANTAMENTO,
-    PAGAMENTO_SERVICOS
+    PAGAMENTO
 }

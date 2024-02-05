@@ -9,6 +9,11 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Component;
 import ucan.edu.bancoengenharia.core.dto.Evento;
+import ucan.edu.bancoengenharia.core.enums.ETransacaoTipo;
+import static ucan.edu.bancoengenharia.core.enums.ETransacaoTipo.PAGAMENTO;
+import static ucan.edu.bancoengenharia.core.enums.ETransacaoTipo.TRANSFERENCIA;
+import ucan.edu.bancoengenharia.core.producer.KafkaProducer;
+import ucan.edu.bancoengenharia.core.services.TransferenciaService;
 import ucan.edu.bancoengenharia.core.utils.JsonUtil;
 
 /**
@@ -20,72 +25,42 @@ import ucan.edu.bancoengenharia.core.utils.JsonUtil;
 @AllArgsConstructor
 public class BancoEngenhariaEventoConsumer {
 
-    private static final String TRANSFERENCIA_SUCESS = "transferencia-success";
-    private static final String TRANSFERENCIA_FAIL = "transferencia-fail";
-    private static final String MOVIMENTOS_CONTA_SUCCESS = "movimentos-success";
-    private static final String MOVIMENTOS_CONTA_FAIL = "movimentos-fail";
-    private static final String PAGAMENTO_SUCCESS = "pagamento-success";
-    private static final String PAGAMENTO_FAIL = "pagamento-fail";
+    private static final String BANCO_ENGENHARIA_SENDER = "banco-engenharia-sender";
+    private static final String BANCO_ENGENHARIA_RECIEVER = "banco-engenharia-receiver";
+    private static final String BANCO_ENGENHARIA_RECIEVER_FAIL = "banco-engenharia-receiver-fail";
 
     private final JsonUtil jsonUtil;
+    private final KafkaProducer producer;
+    private final TransferenciaService TransferenciaService;
 
     @KafkaListener(
             groupId = "${spring.kafka.consumer.group-id}",
-            topics = TRANSFERENCIA_SUCESS
+            topics = BANCO_ENGENHARIA_RECIEVER
     )
-    public void consumerTransferenciaSucessEvent(String transacao) {
-        log.info("Recebendo evento {} do topico TRANSFERENCIA_SUCESS", transacao);
+    public void consumer(String transacao) {
+        log.info("Recebendo evento {} do topico BANCO_ENEGENHARIA_RECIEVER", transacao);
         Evento evento = jsonUtil.toEvento(transacao);
-        log.info(evento.toString());
+        if (evento != null) {
+            if (evento.getTransacaoTipo().equals(TRANSFERENCIA)) {
+                TransferenciaService.transferenciaReciever(evento);
+                log.info("TRANSFERENCIA", transacao);
+            } else if (evento.getTransacaoTipo().equals(PAGAMENTO)) {
+                log.info("PAGAMENTO", transacao);
+            }
+
+            //producer.enviarEvento(transacao);
+        }
+
     }
 
     @KafkaListener(
             groupId = "${spring.kafka.consumer.group-id}",
-            topics = TRANSFERENCIA_FAIL
+            topics = BANCO_ENGENHARIA_RECIEVER_FAIL
     )
-    public void consumerTransferenciaFailEvent(String transacao) {
-        log.info("Recebendo evento {} do topico TRANSFERENCIA_FAIL", transacao);
+    public void consumerFailEvent(String transacao) {
+        log.info("Recebendo evento {} do topico BANCO_ENEGENHARIA_RECIEVER_FAIL", transacao);
         Evento evento = jsonUtil.toEvento(transacao);
-        log.info(evento.toString());
+        // TransacaoService.realizarTransacao(evento);
     }
 
-    @KafkaListener(
-            groupId = "${spring.kafka.consumer.group-id}",
-            topics = MOVIMENTOS_CONTA_SUCCESS
-    )
-    public void consumerMovimentosContaSucessEvent(String transacao) {
-        log.info("Recebendo evento {} do topico MOVIMENTOS_CONTA_SUCCESS", transacao);
-        Evento evento = jsonUtil.toEvento(transacao);
-        log.info(evento.toString());
-    }
-
-    @KafkaListener(
-            groupId = "${spring.kafka.consumer.group-id}",
-            topics = MOVIMENTOS_CONTA_FAIL
-    )
-    public void consumerMovimentosContaFailEvent(String transacao) {
-        log.info("Recebendo evento {} do topico MOVIMENTOS_CONTA_FAIL", transacao);
-        Evento evento = jsonUtil.toEvento(transacao);
-        log.info(evento.toString());
-    }
-
-    @KafkaListener(
-            groupId = "${spring.kafka.consumer.group-id}",
-            topics = PAGAMENTO_SUCCESS
-    )
-    public void consumerPagamentoSucessEvent(String transacao) {
-        log.info("Recebendo evento {} do topico PAGAMENTO_SUCCESS", transacao);
-        Evento evento = jsonUtil.toEvento(transacao);
-        log.info(evento.toString());
-    }
-
-    @KafkaListener(
-            groupId = "${spring.kafka.consumer.group-id}",
-            topics = PAGAMENTO_FAIL
-    )
-    public void consumerPagamentoFailEvent(String transacao) {
-        log.info("Recebendo evento {} do topico PAGAMENTO_FAIL", transacao);
-        Evento evento = jsonUtil.toEvento(transacao);
-        log.info(evento.toString());
-    }
 }

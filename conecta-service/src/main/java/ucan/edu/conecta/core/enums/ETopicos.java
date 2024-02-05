@@ -22,7 +22,8 @@ public enum ETopicos {
     MOVIMENTOS_SUCCESS("movimentos-success"),
     MOVIMENTOS_FAIL("movimentos-fail"),
     PAGAMENTO_SUCCESS("pagamento-success"),
-    PAGAMENTO_FAIL("pagamento-fail");
+    PAGAMENTO_FAIL("pagamento-fail"),
+    BANCO_ENGENHARIA_RECIEVER("banco-engenharia-receiver");
 
     //OTHERS TOPICS HERE
     private final String topico;

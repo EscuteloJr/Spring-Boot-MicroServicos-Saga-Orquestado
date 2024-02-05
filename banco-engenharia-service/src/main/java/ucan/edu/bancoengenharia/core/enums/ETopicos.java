@@ -15,7 +15,7 @@ import lombok.Getter;
 @AllArgsConstructor
 public enum ETopicos {
 
-    CONECTA("conecta"),
+    CONECTA("orquestrador"),
     TRANSFERENCIA_SUCESS("transferencia-success"),
     TRANSFERENCIA_FAIL("transferencia-fail"),
     MOVIMENTOS_CONTA_SUCCESS("movimentos-success"),

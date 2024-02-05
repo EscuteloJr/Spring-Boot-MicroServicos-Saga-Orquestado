@@ -24,6 +24,7 @@ public class SagaOrquestradorProducer {
     public void enviarEvento(String transacao, String topico) {
         try {
             log.info("Enviando dados ao topico {} com dados {}", topico, transacao);
+            //kafkaTemplate.send(topico, transacao);
             kafkaTemplate.send(topico, transacao);
         } catch (Exception e) {
             log.error("Erro ao enviar dados ao topico {} com dados {}", topico, transacao, e);

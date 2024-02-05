@@ -5,6 +5,7 @@
 package ucan.edu.conecta.config.kafka;
 
 import com.fasterxml.jackson.databind.deser.std.StringDeserializer;
+import com.fasterxml.jackson.databind.ser.std.StringSerializer;
 import java.util.HashMap;
 import java.util.Map;
 import lombok.RequiredArgsConstructor;
@@ -21,6 +22,8 @@ import org.springframework.kafka.core.DefaultKafkaConsumerFactory;
 import org.springframework.kafka.core.DefaultKafkaProducerFactory;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.kafka.core.ProducerFactory;
+import org.springframework.kafka.support.serializer.JsonSerializer;
+import static ucan.edu.conecta.core.enums.ETopicos.BANCO_ENGENHARIA_RECIEVER;
 import static ucan.edu.conecta.core.enums.ETopicos.BASE_ORQUESTRADOR;
 import static ucan.edu.conecta.core.enums.ETopicos.FINISH_FAIL;
 import static ucan.edu.conecta.core.enums.ETopicos.FINISH_SUCCESS;
@@ -61,8 +64,8 @@ public class KafkaConfig {
         var props = new HashMap<String, Object>();
         props.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapServers);
         props.put(ConsumerConfig.GROUP_ID_CONFIG, groupId);
-        props.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);
-        props.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);
+        props.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringSerializer.class);
+        props.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, StringSerializer.class);
         props.put(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, offsetReset);
         return props;
     }
@@ -96,6 +99,11 @@ public class KafkaConfig {
     @Bean
     public NewTopic StartSaga() {
         return buildTopic(START_SAGA.getTopico());
+    }
+
+    @Bean
+    public NewTopic BancoEngenhariaReciever() {
+        return buildTopic(BANCO_ENGENHARIA_RECIEVER.getTopico());
     }
 
     @Bean

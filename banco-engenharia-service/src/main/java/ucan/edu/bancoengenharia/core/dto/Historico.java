@@ -25,5 +25,7 @@ public class Historico {
     ESagaStatus status;
     String message;
     private LocalDateTime createdAt;
+
+
     
 }

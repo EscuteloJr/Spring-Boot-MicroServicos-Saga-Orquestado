@@ -9,6 +9,9 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Component;
 import ucan.edu.conecta.core.dto.Evento;
+import ucan.edu.conecta.core.enums.ETopicos;
+import static ucan.edu.conecta.core.enums.ETopicos.BANCO_ENGENHARIA_RECIEVER;
+import ucan.edu.conecta.core.producer.SagaOrquestradorProducer;
 import ucan.edu.conecta.core.utils.JsonUtil;
 
 /**
@@ -26,14 +29,18 @@ public class SagaOrquestradorConsumer {
     private static final String FINISHFAIL = "finish_fail";
 
     private final JsonUtil jsonUtil;
+    private final SagaOrquestradorProducer orquestradorProducer;
 
     @KafkaListener(
             groupId = "${spring.kafka.consumer.group-id}",
             topics = STARTSAGA
     )
     public void consumerStarSagaEvent(String transacao) {
+
         log.info("Recebendo evento {} do topico STARTSAGA", transacao);
         Evento evento = jsonUtil.toEvento(transacao);
+        System.out.println("EVENTO");
+        orquestradorProducer.enviarEvento(jsonUtil.toJson(evento), BANCO_ENGENHARIA_RECIEVER.getTopico());
         log.info(evento.toString());
     }
 
@@ -43,8 +50,8 @@ public class SagaOrquestradorConsumer {
     )
     public void consumerOrquestradorEvent(String transacao) {
         log.info("Recebendo evento {} do topico BASEORQUESTRADOR", transacao);
-        Evento evento = jsonUtil.toEvento(transacao);
-        log.info(evento.toString());
+       Evento evento = jsonUtil.toEvento(transacao);
+        log.info("Evento recebido {} " ,evento);
     }
 
     @KafkaListener(
