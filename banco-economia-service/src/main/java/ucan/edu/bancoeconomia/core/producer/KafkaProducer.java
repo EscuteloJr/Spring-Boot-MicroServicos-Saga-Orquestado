@@ -8,8 +8,10 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Component;
+import ucan.edu.bancoeconomia.core.dto.Evento;
 import ucan.edu.bancoeconomia.core.enums.ETopicos;
 import static ucan.edu.bancoeconomia.core.enums.ETopicos.CONECTA;
+import ucan.edu.bancoeconomia.core.utils.JsonUtil;
 
 /**
  *
@@ -21,11 +23,14 @@ import static ucan.edu.bancoeconomia.core.enums.ETopicos.CONECTA;
 public class KafkaProducer {
 
     private final KafkaTemplate<String, String> kafkaTemplate;
-
+    private final JsonUtil util;
+    
     public void enviarEvento(String transacao) {
         try {
             log.info("Enviando dados ao topico {} com dados {}", CONECTA.getTopico(), transacao);
-            kafkaTemplate.send(CONECTA.getTopico(), transacao);
+            Evento evento = util.toEvento(transacao);
+            log.info("Topico a receber {}", evento);
+            kafkaTemplate.send(CONECTA.getTopico(), util.toJson(evento));
         } catch (Exception e) {
             log.error("Erro ao enviar dados ao topico {} com dados {}", CONECTA.getTopico(), transacao, e);
         }
